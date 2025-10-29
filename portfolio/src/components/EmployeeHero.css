@@ -1,0 +1,136 @@
+.employee-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 3rem 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.employee-badge {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.employee-avatar {
+  position: relative;
+}
+
+.avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.status-indicator.active {
+  background: #28a745;
+}
+
+.employee-main-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.employee-main-info h2 {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.employee-meta {
+  display: flex;
+  gap: 2rem;
+}
+
+.employee-id, .department {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.employee-quick-stats {
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.employee-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .employee-badge {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .employee-meta {
+    justify-content: center;
+  }
+  
+  .employee-quick-stats {
+    justify-content: center;
+  }
+  
+  .employee-actions {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .employee-main-info h1 {
+    font-size: 2rem;
+  }
+  
+  .employee-quick-stats {
+    gap: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
