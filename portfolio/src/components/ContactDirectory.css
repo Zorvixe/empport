@@ -1,88 +1,189 @@
-.contact-methods, .communication-methods {
+.contact-directory {
+  background: linear-gradient(135deg, #f4f9ff, #eaf3ff);
+  padding: 60px 0;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #14213d;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact-card {
+  flex: 1;
+  min-width: 300px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-method, .comm-method {
+.contact-card:nth-child(1) {
+  border-top: 6px solid #007bff;
+  background: linear-gradient(180deg, #f7fbff, #ffffff);
+}
+.contact-card:nth-child(2) {
+  border-top: 6px solid #ffb400;
+  background: linear-gradient(180deg, #fffaf3, #ffffff);
+}
+.contact-card:nth-child(3) {
+  border-top: 6px solid #28a745;
+  background: linear-gradient(180deg, #f3fff7, #ffffff);
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
+  border-bottom: 2px solid #eef2f6;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.contact-method i, .comm-method i {
-  width: 40px;
-  height: 40px;
-  background: var(--secondary);
-  border-radius: 8px;
+.card-header i {
+  font-size: 1.4rem;
+}
+
+.contact-card:nth-child(1) .card-header i {
+  color: #007bff;
+}
+.contact-card:nth-child(2) .card-header i {
+  color: #ffb400;
+}
+.contact-card:nth-child(3) .card-header i {
+  color: #28a745;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #14213d;
+}
+
+.contact-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #444;
 }
 
-.contact-method label, .comm-method label {
+.contact-item i {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.contact-item label {
   display: block;
   font-weight: 600;
-  color: var(--text-light);
-  margin-bottom: 0.3rem;
   font-size: 0.9rem;
+  color: #14213d;
 }
 
-.contact-method a, .contact-method span, .comm-method span {
-  color: var(--text-dark);
-  font-weight: 500;
-}
-
-.contact-method a {
+.contact-item a,
+.contact-item span {
+  font-size: 0.95rem;
+  color: #333;
   text-decoration: none;
-  color: var(--primary);
 }
 
-.contact-method a:hover {
+.contact-item a:hover {
   text-decoration: underline;
-}
-
-.availability-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .availability-status {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: #d4edda;
-  border-radius: 8px;
-  color: #155724;
+  gap: 10px;
   font-weight: 600;
+  color: #28a745;
+  margin-bottom: 15px;
 }
 
-.status-indicator.available {
-  width: 12px;
-  height: 12px;
-  background: #28a745;
+.status-indicator {
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
+  background-color: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
 }
 
-.working-hours h4, .upcoming-timeoff h4 {
-  color: var(--primary-dark);
-  margin-bottom: 0.5rem;
+.availability-detail h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #14213d;
+  margin-bottom: 5px;
 }
 
-.working-hours p, .upcoming-timeoff p {
-  color: var(--text-light);
+.availability-detail p {
+  color: #555;
   font-size: 0.9rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 6px;
 }
 
 .quick-actions {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 15px;
+  margin-top: 40px;
   flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline:hover {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.25);
 }

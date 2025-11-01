@@ -1,129 +1,132 @@
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+.project-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  transition: all 0.35s ease;
+  overflow: hidden;
+  position: relative;
 }
 
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
 }
 
-.project-header h3 {
-  color: var(--primary-dark);
-  margin: 0;
+/* Decorative top border per card */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: rgba(236, 45, 210, 0.833);
+  opacity: 0.8;
+  transition: 0.3s ease;
 }
 
-.project-status {
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
+.project-card:hover::before {
+  opacity: 1;
 }
 
-.status-completed {
-  background: #d4edda;
-  color: #155724;
-}
-
-.status-progress {
-  background: #fff3cd;
-  color: #856404;
-}
-
-.status-planning {
-  background: #cce7ff;
-  color: #004085;
-}
-
-.project-meta {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-light);
-}
-
-.meta-item i {
-  color: var(--primary);
+/* Project details */
+.project-card h5 {
+  color: #0d6efd;
+  font-weight: 700;
 }
 
 .project-description {
-  color: var(--text-dark);
-  margin-bottom: 1.5rem;
+  color: #4b5563;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.project-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-  padding: 0.3rem 0.8rem;
-  background: var(--secondary);
-  color: var(--primary);
-  border-radius: 20px;
+.project-card .badge {
   font-size: 0.8rem;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.project-card .badge:hover {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Status Colors */
+.status-completed {
+  background-color: #28a745 !important;
+  color: #fff !important;
+}
+
+.status-progress {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.status-planning {
+  background-color: #17a2b8 !important;
+  color: #fff !important;
+}
+
+.project-card .btn {
+  border-radius: 25px;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.project-actions {
-  display: flex;
-  gap: 1rem;
+.project-card .btn-outline-primary:hover {
+  background: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
-.contributions-section h3 {
-  color: var(--primary-dark);
-  margin-bottom: 1.5rem;
+.project-card .btn-outline-success:hover {
+  background: #28a745;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
 }
 
-.contributions-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.contributions {
+  margin-top: 60px;
+  background: linear-gradient(120deg, #ffffff 0%, #f5f8fc 100%);
+  padding: 50px 20px;
+  border-radius: 16px;
 }
 
 .contribution-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid #dee2e6;
+}
+
+.contribution-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+}
+
+.contribution-item:nth-child(1) {
+  border-top: 5px solid #d41289d0;
 }
 
 .contribution-item i {
-  width: 40px;
-  height: 40px;
-  background: var(--secondary);
-  color: var(--primary);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.contribution-item strong {
-  display: block;
-  margin-bottom: 0.3rem;
-  color: var(--primary-dark);
+.contribution-item:hover i {
+  transform: scale(2);
 }
 
-.contribution-item span {
-  color: var(--text-light);
-  font-size: 0.9rem;
+.contribution-item h5 {
+  color: #343a40;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.contribution-item p {
+  color: #6c757d;
 }

@@ -1,82 +1,100 @@
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.employee-info {
+  background: linear-gradient(135deg, #f9fbfd, #e9f0f9);
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.info-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.info-item label {
-  font-weight: 600;
-  color: var(--text-light);
-}
-
-.info-item span {
-  color: var(--text-dark);
+.section-title {
+  border-bottom: none !important;
   font-weight: 500;
-}
-
-.status-badge {
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.status-badge.active {
-  background: #d4edda;
-  color: #155724;
-}
-
-.contact-list {
+  letter-spacing: 1.2px;
+  color: #0d6efd;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.contact-item i {
-  width: 40px;
-  height: 40px;
-  background: var(--secondary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: var(--primary);
-  flex-shrink: 0;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+
+  position: relative;
 }
 
-.contact-item label {
-  display: block;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
+.info-card {
+  position: relative;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border-left: 6px solid transparent;
+  animation: fadeInCard 1s ease both;
 }
 
-.contact-item a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 3px;
+  background: linear-gradient(45deg, #0d6efd, #6f42c1, #20c997, #ffc107);
+  background-size: 400%;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease, background-position 2s linear;
 }
 
-.contact-item a:hover {
-  text-decoration: underline;
+.info-card:hover::before {
+  opacity: 1;
+  background-position: 200% 0;
 }
 
-@media (max-width: 768px) {
-  .info-grid {
-    grid-template-columns: 1fr;
+.info-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 6px;
+  background: linear-gradient(180deg, #0d6efd, #6f42c1, #20c997);
+  border-radius: 18px 0 0 18px;
+  transition: all 0.4s ease;
+}
+
+.info-card:hover::after {
+  background: linear-gradient(180deg, #20c997, #0d6efd, #6f42c1);
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
+}
+
+.info-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(13, 110, 253, 0.25);
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-card .card-body {
+  animation: fadeInUp 0.9s ease forwards;
+  opacity: 0;
+}
+
+.info-card:hover .card-body {
+  opacity: 1;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
 }

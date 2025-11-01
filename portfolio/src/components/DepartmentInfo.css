@@ -1,127 +1,72 @@
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+.department-info {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  overflow: hidden;
 }
 
-.card-header i {
-  width: 40px;
-  height: 40px;
-  background: var(--primary);
-  color: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-header h3 {
-  color: var(--primary-dark);
-  margin: 0;
-}
-
-.department-details h4 {
-  color: var(--primary-dark);
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-
-.department-details p {
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-}
-
-.manager-info label {
-  display: block;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.manager {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem;
-  background: var(--secondary);
-  border-radius: 6px;
-}
-
-.manager i {
-  color: var(--primary);
-}
-
-.team-details h4 {
-  color: var(--primary-dark);
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-
-.team-details p {
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-}
-
-.team-stats {
-  display: flex;
-  gap: 2rem;
-}
-
-.team-stat {
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
+.section-title {
+  position: relative;
   font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary);
+  letter-spacing: 1px;
+  animation: fadeInDown 1s ease;
 }
 
-.stat-label {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-light);
-  margin-top: 0.3rem;
+.dept-box {
+  background: #ffffff;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  animation: fadeInUp 1s ease;
 }
 
-.workspace-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.dept-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.workspace-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.workspace-item i {
-  width: 40px;
-  height: 40px;
-  background: var(--secondary);
-  border-radius: 8px;
+.dept-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
-  flex-shrink: 0;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.workspace-item label {
-  display: block;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
+.dept-box:hover .dept-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
-.workspace-item span {
-  color: var(--text-dark);
-  font-weight: 500;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }

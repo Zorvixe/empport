@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import './App.css';
-import Header from './components/Header';
-import EmployeeHero from './components/EmployeeHero';
-import EmployeeInfo from './components/EmployeeInfo';
-import DepartmentInfo from './components/DepartmentInfo';
-import SkillsCertifications from './components/SkillsCertifications';
-import ProjectsContributions from './components/ProjectsContributions';
-import PerformanceMetrics from './components/PerformanceMetrics';
-import ContactDirectory from './components/ContactDirectory';
-import Footer from './components/Footer';
+import React, { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import EmployeeHero from "./components/EmployeeHero";
+import EmployeeInfo from "./components/EmployeeInfo";
+import DepartmentInfo from "./components/DepartmentInfo";
+import SkillsCertifications from "./components/SkillsCertifications";
+import ProjectsContributions from "./components/ProjectsContributions";
+import PerformanceMetrics from "./components/PerformanceMetrics";
+import ContactDirectory from "./components/ContactDirectory";
+import Footer from "./components/Footer";
 
 function App() {
-  const [currentView, setCurrentView] = useState('profile');
+  const [currentView, setCurrentView] = useState("profile");
 
   return (
     <div className="App">
       <Header currentView={currentView} setCurrentView={setCurrentView} />
       <div className="main-content">
-        {currentView === 'profile' && (
+        {currentView === "profile" && (
           <>
             <EmployeeHero />
             <EmployeeInfo />
@@ -28,8 +28,8 @@ function App() {
             <ContactDirectory />
           </>
         )}
-        {currentView === 'team' && <TeamView />}
-        {currentView === 'directory' && <DirectoryView />}
+        {currentView === "team" && <TeamView />}
+        {currentView === "directory" && <DirectoryView />}
       </div>
       <Footer />
     </div>

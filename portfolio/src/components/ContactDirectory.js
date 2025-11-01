@@ -1,36 +1,67 @@
-import React from 'react';
-import { employeeData } from '../data/employeeData';
-import './ContactDirectory.css';
+import React from "react";
+import { employeeData } from "../data/employeeData";
+import "./ContactDirectory.css";
 
 const ContactDirectory = () => {
   const { contact } = employeeData;
 
   return (
-    <section className="contact-directory section">
+    <section className="contact-directory section py-5" data-aos="fade-up">
       <div className="container">
-        <h2 className="section-title">Contact & Availability</h2>
-        <div className="grid-3">
-          <div className="card">
-            <div className="card-header">
+        <h2 className="section-title text-center mb-4" data-aos="zoom-in">
+          Contact & Availability
+        </h2>
+
+        <div className="contact-grid">
+      
+          <div
+            className="contact-card"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div
+              className="card-header"
+              data-aos="zoom-in"
+              data-aos-delay="150"
+            >
               <i className="fas fa-address-card"></i>
               <h3>Contact Information</h3>
             </div>
-            <div className="contact-methods">
-              <div className="contact-method">
+
+            <div
+              className="contact-body"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                className="contact-item"
+                data-aos="fade-left"
+                data-aos-delay="250"
+              >
                 <i className="fas fa-envelope"></i>
                 <div>
                   <label>Email</label>
                   <a href={`mailto:${contact.email}`}>{contact.email}</a>
                 </div>
               </div>
-              <div className="contact-method">
+
+              <div
+                className="contact-item"
+                data-aos="fade-left"
+                data-aos-delay="300"
+              >
                 <i className="fas fa-phone"></i>
                 <div>
                   <label>Work Phone</label>
                   <span>{contact.workPhone}</span>
                 </div>
               </div>
-              <div className="contact-method">
+
+              <div
+                className="contact-item"
+                data-aos="fade-left"
+                data-aos-delay="350"
+              >
                 <i className="fas fa-mobile-alt"></i>
                 <div>
                   <label>Mobile</label>
@@ -39,28 +70,52 @@ const ContactDirectory = () => {
               </div>
             </div>
           </div>
-          
-          <div className="card">
-            <div className="card-header">
+
+          {/* Internal Communication */}
+          <div className="contact-card" data-aos="fade-up" data-aos-delay="150">
+            <div
+              className="card-header"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
               <i className="fas fa-comments"></i>
               <h3>Internal Communication</h3>
             </div>
-            <div className="communication-methods">
-              <div className="comm-method">
+
+            <div
+              className="contact-body"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <div
+                className="contact-item"
+                data-aos="fade-right"
+                data-aos-delay="300"
+              >
                 <i className="fab fa-slack"></i>
                 <div>
                   <label>Slack</label>
                   <span>{contact.slack}</span>
                 </div>
               </div>
-              <div className="comm-method">
+
+              <div
+                className="contact-item"
+                data-aos="fade-right"
+                data-aos-delay="350"
+              >
                 <i className="fas fa-video"></i>
                 <div>
                   <label>Microsoft Teams</label>
                   <span>{contact.teams}</span>
                 </div>
               </div>
-              <div className="comm-method">
+
+              <div
+                className="contact-item"
+                data-aos="fade-right"
+                data-aos-delay="400"
+              >
                 <i className="fas fa-id-card"></i>
                 <div>
                   <label>Employee Directory</label>
@@ -69,47 +124,56 @@ const ContactDirectory = () => {
               </div>
             </div>
           </div>
-          
-          <div className="card">
-            <div className="card-header">
+
+          {/* Availability */}
+          <div
+            className="contact-card"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div
+              className="card-header"
+              data-aos="zoom-in"
+              data-aos-delay="250"
+            >
               <i className="fas fa-calendar-check"></i>
               <h3>Availability</h3>
             </div>
-            <div className="availability-info">
-              <div className="availability-status">
+
+            <div
+              className="contact-body"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                className="availability-status mb-3"
+                data-aos="flip-up"
+                data-aos-delay="350"
+              >
                 <div className="status-indicator available"></div>
                 <span>Currently Available</span>
               </div>
-              <div className="working-hours">
+
+              <div
+                className="availability-detail"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <h4>Working Hours</h4>
-                <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                <p>Mon - Fri: 9:00 AM - 6:00 PM PST</p>
                 <p>Flexible hours arrangement approved</p>
               </div>
-              <div className="upcoming-timeoff">
+
+              <div
+                className="availability-detail"
+                data-aos="fade-up"
+                data-aos-delay="450"
+              >
                 <h4>Upcoming Time Off</h4>
                 <p>No upcoming time off scheduled</p>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="quick-actions">
-          <button className="btn btn-primary">
-            <i className="fas fa-envelope"></i>
-            Send Email
-          </button>
-          <button className="btn btn-outline">
-            <i className="fas fa-phone"></i>
-            Call Work Number
-          </button>
-          <button className="btn btn-outline">
-            <i className="fab fa-slack"></i>
-            Message on Slack
-          </button>
-          <button className="btn btn-outline">
-            <i className="fas fa-calendar-plus"></i>
-            Schedule Meeting
-          </button>
         </div>
       </div>
     </section>
