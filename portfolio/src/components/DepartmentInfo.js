@@ -1,103 +1,125 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { employeeData } from "../data/employeeData";
 import "./DepartmentInfo.css";
 
 const DepartmentInfo = () => {
   const { department } = employeeData;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const autoRef = useRef(null);
+  const startX = useRef(null);
+
+  useEffect(() => {
+    startAuto();
+    return stopAuto;
+  }, []);
+
+  const startAuto = () => {
+    stopAuto();
+    autoRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % 3);
+    }, 3000);
+  };
+
+  const stopAuto = () => {
+    if (autoRef.current) clearInterval(autoRef.current);
+  };
+
+  const dragStart = (e) => {
+    stopAuto();
+    startX.current = e.touches ? e.touches[0].clientX : e.clientX;
+  };
+
+  const dragMove = (e) => {
+    if (!startX.current) return;
+    const curX = e.touches ? e.touches[0].clientX : e.clientX;
+    const diff = curX - startX.current;
+
+    if (diff > 60) {
+      setActiveIndex((prev) => (prev === 0 ? 2 : prev - 1));
+      startX.current = null;
+    } else if (diff < -60) {
+      setActiveIndex((prev) => (prev + 1) % 3);
+      startX.current = null;
+    }
+  };
+
+  const dragEnd = () => {
+    startX.current = null;
+    startAuto();
+  };
 
   return (
-    <section className="department-info py-5" data-aos="fade-up">
-      <div className="container">
-        <h2
-          className="section-title text-center mb-5 text-primary fw-bold"
-          data-aos="zoom-in"
+    <section className="department-info-3d">
+      <h2 className="dept-title" data-aos="zoom-in">
+        Department & Team
+      </h2>
+
+      <div
+        className="carousel-3d"
+        style={{ transform: `rotateY(${-activeIndex * 120}deg)` }}
+        onMouseDown={dragStart}
+        onMouseMove={dragMove}
+        onMouseUp={dragEnd}
+        onMouseLeave={dragEnd}
+        onTouchStart={dragStart}
+        onTouchMove={dragMove}
+        onTouchEnd={dragEnd}
+      >
+        <div
+          className={`dept-card ${
+            activeIndex === 0 ? "active-card bounce" : ""
+          }`}
         >
-          Department & Team
-        </h2>
-
-        <div className="row g-4 justify-content-center">
-          <div
-            className="col-md-4 col-sm-6"
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
-            <div className="dept-box shadow-lg p-4 text-center border-0">
-              <div className="dept-icon  text-black mx-auto mb-3">
-                <i
-                  className="bi bi-buildings"
-                  style={{ fontSize: "10rem" }}
-                ></i>
-              </div>
-              <h4 className="fw-bold text-dark mb-2">Department</h4>
-              <p className="text-muted small mb-3">
-                Technology & Product Development
-              </p>
-              <div className="dept-details">
-                <label className="fw-semibold d-block text-secondary mb-1">
-                  Manager
-                </label>
-                <span className="text-dark">{department.manager}</span>
-              </div>
-            </div>
+          <div className="dept-icon">
+            <i className="bi bi-buildings"></i>
           </div>
+          <h4>Department</h4>
+          <p className="sub">Technology & Product Development</p>
+          <p className="label">Manager</p>
+          <p className="value">{department.manager}</p>
+        </div>
 
-          <div
-            className="col-md-4 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div className="dept-box shadow-lg p-4 text-center border-0">
-              <div className="dept-icon  text-black mx-auto mb-3">
-                <i
-                  class="bi bi-microsoft-teams"
-                  style={{ fontSize: "10rem" }}
-                ></i>
-              </div>
-              <h4 className="fw-bold text-dark mb-2">Team</h4>
-              <p className="text-muted small mb-3">Frontend Development & UX</p>
-              <div className="d-flex justify-content-around">
-                <div>
-                  <h5 className="fw-bold text-success mb-0">8</h5>
-                  <small className="text-muted">Members</small>
-                </div>
-                <div>
-                  <h5 className="fw-bold text-success mb-0">4</h5>
-                  <small className="text-muted">Projects</small>
-                </div>
-              </div>
-            </div>
+        <div
+          className={`dept-card ${
+            activeIndex === 1 ? "active-card bounce" : ""
+          }`}
+        >
+          <div className="dept-icon">
+            <i className="bi bi-microsoft-teams"></i>
           </div>
-
-          <div
-            className="col-md-4 col-sm-6"
-            data-aos="fade-left"
-            data-aos-delay="300"
-          >
-            <div className="dept-box shadow-lg p-4 text-center border-0">
-              <div className="dept-icon bg-warning text-white mx-auto mb-3">
-                <i
-                  class="bi bi-person-workspace"
-                  style={{ fontSize: "10rem" }}
-                ></i>
-              </div>
-              <h4 className="fw-bold text-dark mb-2">Work Setup</h4>
-              <div className="text-start mt-3">
-                <div className="d-flex align-items-center mb-2">
-                  <i className="fas fa-map-marker-alt text-danger me-2"></i>
-                  <span>{department.floor}</span>
-                </div>
-                <div className="d-flex align-items-center mb-2">
-                  <i className="fas fa-chair text-secondary me-2"></i>
-                  <span>{department.desk}</span>
-                </div>
-                <div className="d-flex align-items-center">
-                  <i className="fas fa-laptop text-info me-2"></i>
-                  <span>MacBook Pro 16", Dual Monitor</span>
-                </div>
-              </div>
+          <h4>Team</h4>
+          <p className="sub">Frontend Development & UX</p>
+          <div className="team">
+            <div>
+              <h5>8</h5>
+              <span>Members</span>
+            </div>
+            <div>
+              <h5>4</h5>
+              <span>Projects</span>
             </div>
           </div>
         </div>
+
+        <div
+          className={`dept-card ${
+            activeIndex === 2 ? "active-card bounce" : ""
+          }`}
+        >
+          <div className="dept-icon">
+            <i className="bi bi-geo-alt"></i>
+          </div>
+          <h4>Work Setup</h4>
+          <p className="setup">📍 {department.floor}</p>
+          <p className="setup">💺 {department.desk}</p>
+          <p className="setup">💻 MacBook Pro 16” + Dual Monitor</p>
+        </div>
+      </div>
+
+      <div className="indicator-dots">
+        <span className={activeIndex === 0 ? "dot active-dot" : "dot"}></span>
+        <span className={activeIndex === 1 ? "dot active-dot" : "dot"}></span>
+        <span className={activeIndex === 2 ? "dot active-dot" : "dot"}></span>
       </div>
     </section>
   );

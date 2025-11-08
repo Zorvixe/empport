@@ -1,100 +1,120 @@
-.employee-info {
-  background: linear-gradient(135deg, #f9fbfd, #e9f0f9);
-  padding: 70px 0;
-  position: relative;
-  overflow: hidden;
+.employee-info-section {
+  padding: 90px   0;
+  background: linear-gradient(135deg, #e8eff7, #cdddf0);
+  text-align: center;
 }
 
-.section-title {
-  border-bottom: none !important;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  color: #0d6efd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
+.info-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 40px;
+}
 
+.flip-book {
+  width: 850px;
+  height: 400px;
+  margin: auto;
   position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.flip-book.flip {
+  transform: rotateY(180deg);
 }
 
 .info-card {
-  position: relative;
-  border-radius: 18px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
   background: #ffffff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.5s ease;
-  border-left: 6px solid transparent;
-  animation: fadeInCard 1s ease both;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(45, 156, 255, 0.3);
+  backface-visibility: hidden;
+
+
+  border-top: 6px solid #2d9cff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+  text-align: left;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .info-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 18px;
-  padding: 3px;
-  background: linear-gradient(45deg, #0d6efd, #6f42c1, #20c997, #ffc107);
-  background-size: 400%;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.5s ease, background-position 2s linear;
+  opacity: 0.12;
+  border-radius: 20px;
+  pointer-events: none;
 }
 
-.info-card:hover::before {
-  opacity: 1;
-  background-position: 200% 0;
+.card-title {
+  color: #2d9cff;
+  margin-bottom: 35px;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-.info-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 6px;
-  background: linear-gradient(180deg, #0d6efd, #6f42c1, #20c997);
-  border-radius: 18px 0 0 18px;
-  transition: all 0.4s ease;
+.info-row {
+  display: grid;
+  grid-template-columns: 40px 160px auto;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 18px;
+  width: 100%;
 }
 
-.info-card:hover::after {
-  background: linear-gradient(180deg, #20c997, #0d6efd, #6f42c1);
-  box-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
+.info-row i {
+  color: #2d9cff;
+  font-size: 1.4rem;
 }
 
-.info-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(13, 110, 253, 0.25);
+.info-row span {
+  color: #333;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
-@keyframes fadeInCard {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.info-row p,
+.info-link {
+  margin: 0;
+  font-weight: 500;
+  color: #111;
+  font-size: 1.03rem;
 }
 
-.info-card .card-body {
-  animation: fadeInUp 0.9s ease forwards;
-  opacity: 0;
+.info-link {
+  color: #2d9cff;
+  text-decoration: none;
 }
 
-.info-card:hover .card-body {
-  opacity: 1;
+.info-link:hover {
+  text-decoration: underline;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+.flip-btn {
+  margin-top: 20px;
+  padding: 12px 36px;
+  border-radius: 30px;
+  border: 2px solid #2d9cff;
+  background: transparent;
+  color: #2d9cff;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: 0.3s;
+}
+
+.flip-btn:hover {
+  background: #2d9cff;
+  color: #ffffff;
 }

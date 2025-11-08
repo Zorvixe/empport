@@ -1,132 +1,206 @@
-.project-card {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #e9ecef;
-  transition: all 0.35s ease;
+.projects-showcase {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #d9e8ff, #eff6ff);
   overflow: hidden;
+}
+
+.showcase-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #003875;
   position: relative;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
-}
-
-/* Decorative top border per card */
-.project-card::before {
+.showcase-title::after {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 6px;
-  width: 100%;
-  background: rgba(236, 45, 210, 0.833);
-  opacity: 0.8;
-  transition: 0.3s ease;
-}
-
-.project-card:hover::before {
-  opacity: 1;
-}
-
-/* Project details */
-.project-card h5 {
-  color: #0d6efd;
-  font-weight: 700;
-}
-
-.project-description {
-  color: #4b5563;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.project-card .badge {
-  font-size: 0.8rem;
-  border-radius: 20px;
-  padding: 6px 12px;
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  transition: all 0.2s ease;
-}
-
-.project-card .badge:hover {
+  width: 80px;
+  height: 4px;
   background: #007bff;
-  color: #fff;
-  border-color: #007bff;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 50px;
 }
 
-/* Status Colors */
+/* ✅ Swiper Carousel Container */
+.projects-carousel {
+  padding-bottom: 70px;
+}
+
+/* Swiper Slide Size */
+.carousel-card {
+  width: 330px !important;
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 🔹 Glass Project Card */
+.project-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  cursor: grab;
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.03) rotate3d(1, 1, 0, 6deg);
+  box-shadow: 0px 18px 40px rgba(0, 52, 105, 0.25);
+}
+
+/* Header */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #003166;
+}
+
+/* ✅ Status Labels */
+.project-status {
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .status-completed {
-  background-color: #28a745 !important;
-  color: #fff !important;
+  background: #d1f7d6;
+  color: #069801;
 }
 
 .status-progress {
-  background-color: #ffc107 !important;
-  color: #000 !important;
+  background: #fff6d9;
+  color: #cc8601;
 }
 
 .status-planning {
-  background-color: #17a2b8 !important;
-  color: #fff !important;
+  background: #dff1ff;
+  color: #007bff;
 }
 
-.project-card .btn {
-  border-radius: 25px;
+/* Description */
+.project-desc {
+  margin: 12px 0 18px;
+  color: #2a2a2a;
+  line-height: 1.5;
+}
+
+/* 🟣 Tech Pills */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-pill {
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #abd1ff, #78a8ff);
+  color: white;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: transform 0.3s;
+}
+
+.tech-pill:hover {
+  transform: scale(1.12);
+}
+
+/* Buttons */
+.project-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.action-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #003f88;
+  border: none;
+  color: white;
   font-weight: 600;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: 0.35s;
 }
 
-.project-card .btn-outline-primary:hover {
-  background: #007bff;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+.action-btn:hover {
+  background: #005eff;
+  transform: scale(1.05);
 }
 
-.project-card .btn-outline-success:hover {
-  background: #28a745;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+/* 🔥 Contribution Section */
+.contrib-title {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003875;
+  margin-bottom: 40px;
 }
 
-.contributions {
-  margin-top: 60px;
-  background: linear-gradient(120deg, #ffffff 0%, #f5f8fc 100%);
-  padding: 50px 20px;
+.contrib-grid {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.contrib-card {
+  background: white;
+  padding: 28px;
+  width: 260px;
   border-radius: 16px;
+  text-align: center;
+  border: 1px solid #d7e6ff;
+  transition: 0.35s ease;
+  cursor: pointer;
+  position: relative;
 }
 
-.contribution-item {
-  background: #ffffff;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  border: 1px solid #dee2e6;
+.contrib-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 12px 32px rgba(0, 57, 112, 0.28);
 }
 
-.contribution-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+.contrib-icon {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
 }
 
-.contribution-item:nth-child(1) {
-  border-top: 5px solid #d41289d0;
+/* ✅ Swiper Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #003f88;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
-.contribution-item i {
-  transition: transform 0.3s ease, color 0.3s ease;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.2);
+  color: #005eff;
 }
 
-.contribution-item:hover i {
-  transform: scale(2);
+/* ✅ Swiper Pagination Dots */
+.swiper-pagination-bullet {
+  background: #538eff;
+  opacity: 0.6;
 }
 
-.contribution-item h5 {
-  color: #343a40;
-  font-weight: 300;
-  margin-bottom: 8px;
-}
-
-.contribution-item p {
-  color: #6c757d;
+.swiper-pagination-bullet-active {
+  background: #003f88;
+  opacity: 1;
 }

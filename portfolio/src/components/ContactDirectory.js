@@ -4,122 +4,121 @@ import "./ContactDirectory.css";
 
 const ContactDirectory = () => {
   const { contact } = employeeData;
+  const isAvailable = contact.available;
 
   return (
-    <section className="contact-directory section py-5" data-aos="fade-up">
+    <section className="contact-directory" data-aos="fade-up">
       <div className="container">
-        <h2 className="section-title text-center mb-4" data-aos="zoom-in">
+        <h2 className="showcase-title" data-aos="zoom-in">
           Contact & Availability
         </h2>
 
-        <div className="contact-grid">
-      
+        <div className="cd-grid">
+          {/* Contact Information */}
           <div
-            className="contact-card"
-            data-aos="fade-right"
+            className="cd-flip-card"
+            data-aos="flip-left"
             data-aos-delay="100"
           >
-            <div
-              className="card-header"
-              data-aos="zoom-in"
-              data-aos-delay="150"
-            >
-              <i className="fas fa-address-card"></i>
-              <h3>Contact Information</h3>
-            </div>
-
-            <div
-              className="contact-body"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div
-                className="contact-item"
-                data-aos="fade-left"
-                data-aos-delay="250"
-              >
-                <i className="fas fa-envelope"></i>
-                <div>
-                  <label>Email</label>
-                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            <div className="cd-flip-inner">
+              {/* FRONT */}
+              <div className="cd-card-wrapper front">
+                <div className="cd-card">
+                  <div className="cd-card-header">
+                    <i className="fas fa-address-card icon-glow"></i>
+                    <h3>Contact Information</h3>
+                  </div>
+                  <p className="cd-hover-hint">Hover to View Details</p>
                 </div>
               </div>
 
-              <div
-                className="contact-item"
-                data-aos="fade-left"
-                data-aos-delay="300"
-              >
-                <i className="fas fa-phone"></i>
-                <div>
-                  <label>Work Phone</label>
-                  <span>{contact.workPhone}</span>
-                </div>
-              </div>
+              {/* BACK */}
+              <div className="cd-card-wrapper back">
+                <div className="cd-card">
+                  <div className="cd-card-body">
+                    <div className="cd-item">
+                      <span className="icon-badge">
+                        <i className="fas fa-envelope"></i>
+                      </span>
+                      <div className="cd-line">
+                        <label>Email</label>
+                        <a href={`mailto:${contact.email}`} className="value">
+                          {contact.email}
+                        </a>
+                      </div>
+                    </div>
 
-              <div
-                className="contact-item"
-                data-aos="fade-left"
-                data-aos-delay="350"
-              >
-                <i className="fas fa-mobile-alt"></i>
-                <div>
-                  <label>Mobile</label>
-                  <span>{contact.mobile}</span>
+                    <div className="cd-item">
+                      <span className="icon-badge">
+                        <i className="fas fa-phone"></i>
+                      </span>
+                      <div className="cd-line">
+                        <label>Work Phone</label>
+                        <span className="value">{contact.workPhone}</span>
+                      </div>
+                    </div>
+
+                    <div className="cd-item">
+                      <span className="icon-badge">
+                        <i className="fas fa-mobile-alt"></i>
+                      </span>
+                      <div className="cd-line">
+                        <label>Mobile</label>
+                        <span className="value">{contact.mobile}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Internal Communication */}
-          <div className="contact-card" data-aos="fade-up" data-aos-delay="150">
-            <div
-              className="card-header"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <i className="fas fa-comments"></i>
-              <h3>Internal Communication</h3>
-            </div>
-
-            <div
-              className="contact-body"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
-              <div
-                className="contact-item"
-                data-aos="fade-right"
-                data-aos-delay="300"
-              >
-                <i className="fab fa-slack"></i>
-                <div>
-                  <label>Slack</label>
-                  <span>{contact.slack}</span>
+          <div className="cd-flip-card" data-aos="flip-up" data-aos-delay="200">
+            <div className="cd-flip-inner">
+              <div className="cd-card-wrapper front">
+                <div className="cd-card">
+                  <div className="cd-card-header">
+                    <i className="fas fa-comments icon-glow"></i>
+                    <h3>Internal Communication</h3>
+                  </div>
+                  <p className="cd-hover-hint">Hover to View Details</p>
                 </div>
               </div>
 
-              <div
-                className="contact-item"
-                data-aos="fade-right"
-                data-aos-delay="350"
-              >
-                <i className="fas fa-video"></i>
-                <div>
-                  <label>Microsoft Teams</label>
-                  <span>{contact.teams}</span>
-                </div>
-              </div>
+              <div className="cd-card-wrapper back">
+                <div className="cd-card">
+                  <div className="cd-card-body">
+                    <div className="cd-item">
+                      <span className="icon-badge">
+                        <i className="fab fa-slack"></i>
+                      </span>
+                      <div className="cd-line">
+                        <label>Slack</label>
+                        <span className="value">{contact.slack}</span>
+                      </div>
+                    </div>
 
-              <div
-                className="contact-item"
-                data-aos="fade-right"
-                data-aos-delay="400"
-              >
-                <i className="fas fa-id-card"></i>
-                <div>
-                  <label>Employee Directory</label>
-                  <span>Profile #8472</span>
+                    <div className="cd-item">
+                      <span className="icon-badge">
+                        <i className="fas fa-video"></i>
+                      </span>
+                      <div className="cd-line">
+                        <label>Microsoft Teams</label>
+                        <span className="value">{contact.teams}</span>
+                      </div>
+                    </div>
+
+                    <div className="cd-item">
+                      <span className="icon-badge">
+                        <i className="fas fa-id-card"></i>
+                      </span>
+                      <div className="cd-line">
+                        <label>Employee Directory</label>
+                        <span className="value">Profile #8472</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,50 +126,48 @@ const ContactDirectory = () => {
 
           {/* Availability */}
           <div
-            className="contact-card"
-            data-aos="fade-left"
-            data-aos-delay="200"
+            className="cd-flip-card"
+            data-aos="flip-right"
+            data-aos-delay="300"
           >
-            <div
-              className="card-header"
-              data-aos="zoom-in"
-              data-aos-delay="250"
-            >
-              <i className="fas fa-calendar-check"></i>
-              <h3>Availability</h3>
-            </div>
-
-            <div
-              className="contact-body"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div
-                className="availability-status mb-3"
-                data-aos="flip-up"
-                data-aos-delay="350"
-              >
-                <div className="status-indicator available"></div>
-                <span>Currently Available</span>
+            <div className="cd-flip-inner">
+              <div className="cd-card-wrapper front">
+                <div className="cd-card">
+                  <div className="cd-card-header">
+                    <i className="fas fa-calendar-check icon-glow"></i>
+                    <h3>Availability</h3>
+                  </div>
+                  <p className="cd-hover-hint">Hover to View Details</p>
+                </div>
               </div>
 
-              <div
-                className="availability-detail"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <h4>Working Hours</h4>
-                <p>Mon - Fri: 9:00 AM - 6:00 PM PST</p>
-                <p>Flexible hours arrangement approved</p>
-              </div>
+              <div className="cd-card-wrapper back">
+                <div className="cd-card">
+                  <div className="cd-card-body">
+                    <div className="cd-status">
+                      <span
+                        className={`status-dot ${
+                          isAvailable ? "online" : "offline"
+                        }`}
+                      ></span>
+                      <p className="value">
+                        {isAvailable
+                          ? "Currently Available"
+                          : "Currently Offline / Busy"}
+                      </p>
+                    </div>
 
-              <div
-                className="availability-detail"
-                data-aos="fade-up"
-                data-aos-delay="450"
-              >
-                <h4>Upcoming Time Off</h4>
-                <p>No upcoming time off scheduled</p>
+                    <div className="cd-info">
+                      <h4>Working Hours</h4>
+                      <p className="value">Mon - Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+
+                    <div className="cd-info">
+                      <h4>Upcoming Time Off</h4>
+                      <p className="value">No scheduled leave</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
