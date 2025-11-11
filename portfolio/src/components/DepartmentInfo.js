@@ -17,7 +17,7 @@ const DepartmentInfo = () => {
     stopAuto();
     autoRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % 3);
-    }, 3000);
+    }, 4000);
   };
 
   const stopAuto = () => {
@@ -57,6 +57,8 @@ const DepartmentInfo = () => {
       <div
         className="carousel-3d"
         style={{ transform: `rotateY(${-activeIndex * 120}deg)` }}
+        onMouseEnter={stopAuto}
+        onMouseLeave={startAuto}
         onMouseDown={dragStart}
         onMouseMove={dragMove}
         onMouseUp={dragEnd}

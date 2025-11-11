@@ -205,3 +205,27 @@
   opacity: 0.6;
   margin-top: 12px;
 }
+
+.cd-link {
+  color: #003875;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.cd-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.cd-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.cd-item i {
+  color: #007bff;
+  font-size: 1rem;
+}

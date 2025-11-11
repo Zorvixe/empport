@@ -6,8 +6,6 @@ const EmployeeHero = () => {
     <section className="employee-hero">
       <div className="container hero-container">
         <div className="hero-left" data-aos="fade-right">
-       
-
           <h1 className="hero-title">
             Hello, my name’s <span>Ganesh.</span>
           </h1>
@@ -18,8 +16,9 @@ const EmployeeHero = () => {
           </p>
 
           <div className="hero-buttons">
-           
-            <button className="btn-outline">See my work →</button>
+            <a href="#projects-section" className="btn-outline">
+              See my work →
+            </a>
           </div>
         </div>
 
@@ -31,11 +30,11 @@ const EmployeeHero = () => {
           <div className="shape triangle"></div>
           <div className="shape spiral"></div>
 
-   
           <div className="follow-text">FOLLOW ME ON —</div>
           <div className="social-links">
-          
-            <a href="#"><i className="bi bi-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/h-a-ganesh-273a24294">
+              <i className="bi bi-linkedin"></i>
+            </a>
           </div>
         </div>
       </div>

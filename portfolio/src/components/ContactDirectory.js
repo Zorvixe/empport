@@ -25,7 +25,7 @@ const ContactDirectory = () => {
               <div className="cd-card-wrapper front">
                 <div className="cd-card">
                   <div className="cd-card-header">
-                    <i className="fas fa-address-card icon-glow"></i>
+                    <i className="bi bi-person-vcard icon-glow"></i>
                     <h3>Contact Information</h3>
                   </div>
                   <p className="cd-hover-hint">Hover to View Details</p>
@@ -37,35 +37,45 @@ const ContactDirectory = () => {
                 <div className="cd-card">
                   <div className="cd-card-body">
                     <div className="cd-item">
-                      <span className="icon-badge">
-                        <i className="fas fa-envelope"></i>
-                      </span>
-                      <div className="cd-line">
-                        <label>Email</label>
-                        <a href={`mailto:${contact.email}`} className="value">
-                          {contact.email}
-                        </a>
-                      </div>
+                      <i className="bi bi-envelope-fill"></i>
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="cd-link"
+                        target="_blank"
+                      >
+                        {contact.email}
+                      </a>
                     </div>
 
                     <div className="cd-item">
-                      <span className="icon-badge">
-                        <i className="fas fa-phone"></i>
-                      </span>
-                      <div className="cd-line">
-                        <label>Work Phone</label>
-                        <span className="value">{contact.workPhone}</span>
-                      </div>
+                      <i className="bi bi-telephone-fill"></i>
+                      <a href={`tel:${contact.mobile}`} className="cd-link">
+                        {contact.mobile}
+                      </a>
                     </div>
 
                     <div className="cd-item">
-                      <span className="icon-badge">
-                        <i className="fas fa-mobile-alt"></i>
-                      </span>
-                      <div className="cd-line">
-                        <label>Mobile</label>
-                        <span className="value">{contact.mobile}</span>
-                      </div>
+                      <i className="bi bi-github"></i>
+                      <a
+                        href={contact.github}
+                        className="cd-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub Profile
+                      </a>
+                    </div>
+
+                    <div className="cd-item">
+                      <i className="bi bi-linkedin"></i>
+                      <a
+                        href={contact.linkedin}
+                        className="cd-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn Profile
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -79,7 +89,7 @@ const ContactDirectory = () => {
               <div className="cd-card-wrapper front">
                 <div className="cd-card">
                   <div className="cd-card-header">
-                    <i className="fas fa-comments icon-glow"></i>
+                    <i className="bi bi-chat-dots-fill icon-glow"></i>
                     <h3>Internal Communication</h3>
                   </div>
                   <p className="cd-hover-hint">Hover to View Details</p>
@@ -90,33 +100,18 @@ const ContactDirectory = () => {
                 <div className="cd-card">
                   <div className="cd-card-body">
                     <div className="cd-item">
-                      <span className="icon-badge">
-                        <i className="fab fa-slack"></i>
-                      </span>
-                      <div className="cd-line">
-                        <label>Slack</label>
-                        <span className="value">{contact.slack}</span>
-                      </div>
+                      <i className="bi bi-slack"></i>
+                      <span className="value">{contact.slack}</span>
                     </div>
 
                     <div className="cd-item">
-                      <span className="icon-badge">
-                        <i className="fas fa-video"></i>
-                      </span>
-                      <div className="cd-line">
-                        <label>Microsoft Teams</label>
-                        <span className="value">{contact.teams}</span>
-                      </div>
+                      <i className="bi bi-camera-video-fill"></i>
+                      <span className="value">{contact.teams}</span>
                     </div>
 
                     <div className="cd-item">
-                      <span className="icon-badge">
-                        <i className="fas fa-id-card"></i>
-                      </span>
-                      <div className="cd-line">
-                        <label>Employee Directory</label>
-                        <span className="value">Profile #8472</span>
-                      </div>
+                      <i className="bi bi-person-badge-fill"></i>
+                      <span className="value">Profile #8472</span>
                     </div>
                   </div>
                 </div>
@@ -134,7 +129,7 @@ const ContactDirectory = () => {
               <div className="cd-card-wrapper front">
                 <div className="cd-card">
                   <div className="cd-card-header">
-                    <i className="fas fa-calendar-check icon-glow"></i>
+                    <i className="bi bi-calendar-check-fill icon-glow"></i>
                     <h3>Availability</h3>
                   </div>
                   <p className="cd-hover-hint">Hover to View Details</p>

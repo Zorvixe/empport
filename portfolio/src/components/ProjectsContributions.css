@@ -1,7 +1,6 @@
-.projects-showcase {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #d9e8ff, #eff6ff);
-  overflow: hidden;
+.projects-section {
+  padding: 70px 0;
+  background: #f8fbff;
 }
 
 .showcase-title {
@@ -23,184 +22,137 @@
   border-radius: 50px;
 }
 
-/* ✅ Swiper Carousel Container */
-.projects-carousel {
-  padding-bottom: 70px;
+.project-swiper {
+  width: 90%;
+  margin: 0 auto 70px;
 }
 
-/* Swiper Slide Size */
-.carousel-card {
-  width: 330px !important;
-  max-width: 90%;
-  display: flex;
-  justify-content: center;
+/* Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #003875 !important;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+  transition: 0.3s ease;
 }
 
-/* 🔹 Glass Project Card */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Project Card */
 .project-card {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(12px);
-  padding: 25px;
-  border-radius: 18px;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
-  cursor: grab;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border-top: 5px solid #007bff; /* Top Border Added */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: 0.35s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-12px) scale(1.03) rotate3d(1, 1, 0, 6deg);
-  box-shadow: 0px 18px 40px rgba(0, 52, 105, 0.25);
-}
-
-/* Header */
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .project-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #003166;
-}
-
-/* ✅ Status Labels */
-.project-status {
-  padding: 6px 12px;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.status-completed {
-  background: #d1f7d6;
-  color: #069801;
-}
-
-.status-progress {
-  background: #fff6d9;
-  color: #cc8601;
-}
-
-.status-planning {
-  background: #dff1ff;
-  color: #007bff;
-}
-
-/* Description */
-.project-desc {
-  margin: 12px 0 18px;
-  color: #2a2a2a;
-  line-height: 1.5;
-}
-
-/* 🟣 Tech Pills */
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 15px;
-}
-
-.tech-pill {
-  padding: 6px 14px;
-  background: linear-gradient(135deg, #abd1ff, #78a8ff);
-  color: white;
-  border-radius: 30px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  transition: transform 0.3s;
-}
-
-.tech-pill:hover {
-  transform: scale(1.12);
-}
-
-/* Buttons */
-.project-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 14px;
-}
-
-.action-btn {
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: #003f88;
-  border: none;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.35s;
-}
-
-.action-btn:hover {
-  background: #005eff;
-  transform: scale(1.05);
-}
-
-/* 🔥 Contribution Section */
-.contrib-title {
-  margin-top: 80px;
-  text-align: center;
-  font-size: 2rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: #003875;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+}
+
+/* Status Tag */
+.status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.status-badge.completed {
+  background: #d3f5d3;
+  color: #0c6f0c;
+}
+.status-badge.in-progress {
+  background: #ffefc6;
+  color: #b07a00;
+}
+.status-badge.planning {
+  background: #e1e1ff;
+  color: #3f34d1;
+}
+
+.project-role,
+.project-time {
+  font-size: 1rem;
+  color: #565656;
+}
+
+.project-desc {
+  margin: 15px 0 18px;
+  font-size: 0.99rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.tech-tag {
+  background: #e7f1ff;
+  padding: 7px 14px;
+  margin: 5px;
+  border-radius: 14px;
+  font-size: 0.82rem;
+  display: inline-block;
+  color: #004b89;
+}
+
+/* Contributions Section */
+.sub-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 50px 0 25px;
+  color: #003875;
+  font-weight: 600;
 }
 
 .contrib-grid {
   display: flex;
   justify-content: center;
-  gap: 26px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
-.contrib-card {
-  background: white;
-  padding: 28px;
-  width: 260px;
-  border-radius: 16px;
+.contrib-item {
+  background: #ffffff;
+  padding: 22px 18px;
+  border-radius: 14px;
+  width: 220px;
   text-align: center;
-  border: 1px solid #d7e6ff;
-  transition: 0.35s ease;
-  cursor: pointer;
-  position: relative;
+  border-top: 4px solid #007bff; /* Top Border Added */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
 }
 
-.contrib-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0px 12px 32px rgba(0, 57, 112, 0.28);
+.contrib-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
 }
 
-.contrib-icon {
-  font-size: 2.6rem;
-  margin-bottom: 15px;
-}
-
-/* ✅ Swiper Navigation Arrows */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #003f88;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  transform: scale(1.2);
-  color: #005eff;
-}
-
-/* ✅ Swiper Pagination Dots */
-.swiper-pagination-bullet {
-  background: #538eff;
-  opacity: 0.6;
-}
-
-.swiper-pagination-bullet-active {
-  background: #003f88;
-  opacity: 1;
+.contrib-item i {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+  color: #007bff;
 }

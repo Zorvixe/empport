@@ -16,6 +16,33 @@ const Footer = () => {
             </div>
             <p>Employee Directory System v2.4</p>
             <p>Confidential - Internal Use Only</p>
+
+            {/* Social Links */}
+            <div className="footer-social">
+              <a
+                href="https://www.linkedin.com/company/zorvixe-technologies/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-linkedin"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/zorvixe_technologies"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
+
+              <a
+                href="https://zorvixetechnologies.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-globe2"></i>
+              </a>
+            </div>
           </div>
 
           <div className="footer-section">
@@ -70,12 +97,14 @@ const Footer = () => {
             <a
               target="_blank"
               className="company-link"
-              href="www.zorvixetechnologies.com"
+              rel="noopener noreferrer"
+              href="https://zorvixetechnologies.com"
             >
               Zorvixe Technologies
-            </a>
+            </a>{" "}
             . All rights reserved. | Confidential Employee Information
           </p>
+
           <div className="footer-links">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Use</a>
